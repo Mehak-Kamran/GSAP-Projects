@@ -1,2 +1,2 @@
-# GSAP-Projescts
+# GSAP-Projects
 Projects using GSAP
