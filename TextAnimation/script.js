@@ -6,21 +6,42 @@ console.log(text)
 var splittext=text.split("")
 console.log(splittext)
 //assign each alphabet a span
+//additional
+var len=Math.floor(text.length/2)
+console.log(len)
+
 clutter=""
-splittext.forEach(function(e){
+splittext.forEach(function(e,index){
     console.log(e)
-   clutter += `<span>${e} </span>`
+    if(index<len){
+        clutter += `<span class="a">${e} </span>`
+    }
+    else{
+        clutter += `<span class="b">${e} </span>`
+    }
+   
 }
  
 )
 h1.innerHTML=clutter
 console.log(clutter)
+
+
 //gsap
-gsap.from("h1 span",{
+gsap.from(".a",{
     y:50,
     duration:0.8,
     opacity:0,
-    delay:0.5,
-    stagger:0.15
+    delay:0.6,
+    stagger:0.10
+
+})
+
+gsap.from(".b",{
+    y:50,
+    duration:0.8,
+    opacity:0,
+    delay:0.6,
+    stagger:-0.10
 
 })
